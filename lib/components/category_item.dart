@@ -18,6 +18,7 @@ class CategoryItem extends StatelessWidget {
           ],
         ),
       ),
+      child: Text(category.title),
     );
   }
 }
