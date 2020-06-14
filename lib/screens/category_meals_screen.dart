@@ -15,7 +15,7 @@ class CategoryMealsScreen extends StatelessWidget {
 
     //
     final categoryMeals = DUMMY_MEALS.where((meal) {
-      return meal.categories.contains(meal.id);
+      return meal.categories.contains(category.id);
     }).toList();
 
     // Implements build Scaffold, exibir refeições
@@ -26,7 +26,7 @@ class CategoryMealsScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: categoryMeals.length, // Precisa passar as refeições aqui
         itemBuilder: (context, index) {
-          return MealItems();
+          return MealItems(categoryMeals[index]);
         },
       ),
     );

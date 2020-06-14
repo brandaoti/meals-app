@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
 
+import '../model/meal.dart';
+
 class MealItems extends StatelessWidget {
+  //Instancia da classe
+  final Meal meal;
+
+  //Construtor
+  const MealItems(this.meal);
+
+  // TODO: Criar método pra navegar para tela com os detalhes da Meal
+
   @override
   Widget build(BuildContext context) {
+    //TODO: add um InkWell e ativar onTap, chamando a função
     return Card(
       elevation: 5,
       margin: const EdgeInsets.all(10),
@@ -18,12 +29,13 @@ class MealItems extends StatelessWidget {
                 ),
                 // Responsavel por gerar as imagens das refeições
                 child: Image.network(
-                  'https://i.pinimg.com/originals/e4/34/2a/e4342a4e0e968344b75cf50cf1936c09.jpg',
+                  meal.imageUrl,
                   height: 250,
                   width: double.infinity,
                   fit: BoxFit.cover,
                 ),
               ),
+              //TODO: Add o Positioned, pra exibir uma msg
             ],
           ),
           // Linha responsavel por exibir tempo, trabalho e preço
@@ -35,18 +47,21 @@ class MealItems extends StatelessWidget {
                 Row(
                   children: <Widget>[
                     Icon(Icons.timer),
-                    Text('Duração'),
+                    Text('${meal.duration} min'),
                   ],
                 ),
                 Row(
                   children: <Widget>[
                     Icon(Icons.work),
-                    Text('Complexidate'),
+                    //TODO: Verificação da dificuldade em preparar.
+                    Text(''),
                   ],
                 ),
                 Row(
                   children: <Widget>[
                     Icon(Icons.attach_money),
+
+                    //TODO: Verificar o preço.
                     Text('Preço'),
                   ],
                 ),
