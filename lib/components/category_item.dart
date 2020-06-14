@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 import '../model/category.dart';
-import '../screens/category_meals_screen.dart';
+
+import '../routes/app_routes.dart';
 
 class CategoryItem extends StatelessWidget {
   // Instancia da classe Category, pegando os atributos passado no construtor
@@ -10,12 +11,9 @@ class CategoryItem extends StatelessWidget {
   const CategoryItem(this.category);
 
   void _selectCategory(BuildContext context) {
-    Navigator.of(context).push(
-      MaterialPageRoute(
-        builder: (_) {
-          return CategoryMealsScreen(category);
-        },
-      ),
+    Navigator.of(context).pushNamed(
+      AppRouter.CATEGORIES_MEAL_SCREEN,
+      arguments: category,
     );
   }
 
