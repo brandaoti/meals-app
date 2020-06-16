@@ -45,4 +45,46 @@ class Meal {
     @required this.complexity,
     @required this.cost,
   });
+
+  // Método pra verificar a dificuldade em preparar a refeição
+  String get complexityText {
+    switch (complexity) {
+      //
+      case Complexity.Simple:
+        return 'Simples';
+        break;
+
+      case Complexity.Medium:
+        return 'Normal';
+        break;
+
+      case Complexity.Difficult:
+        return 'Difícil';
+        break;
+
+      default:
+        return 'Nenhuma informação do trabalho';
+    }
+  }
+
+  // Método pra verificar o preço gasto na refeição
+  String get costText {
+    switch (cost) {
+      //
+      case Cost.Cheap:
+        return 'Barato';
+        break;
+
+      case Cost.Fair:
+        return 'Médio';
+        break;
+
+      case Cost.Expensive:
+        return 'Caro';
+        break;
+
+      default:
+        return 'Nenhuma valor definido';
+    }
+  }
 }

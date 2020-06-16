@@ -54,7 +54,7 @@ class MealItems extends StatelessWidget {
                   children: <Widget>[
                     Icon(Icons.work),
                     //TODO: Verificação da dificuldade em preparar.
-                    Text(''),
+                    Text('${meal.complexityText}'),
                   ],
                 ),
                 Row(
@@ -62,7 +62,7 @@ class MealItems extends StatelessWidget {
                     Icon(Icons.attach_money),
 
                     //TODO: Verificar o preço.
-                    Text('Preço'),
+                    Text('${meal.costText}'),
                   ],
                 ),
               ],
