@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../data/dummy_category.dart';
-import '../components/category_item.dart';
+import '../components/category_itens.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -23,7 +23,7 @@ class HomeScreen extends StatelessWidget {
             mainAxisSpacing: 20,
           ),
           children: DUMMY_CATEGORIES.map((item) {
-            return CategoryItem(item);
+            return CategoryItens(item);
           }).toList(),
         ),
       ),

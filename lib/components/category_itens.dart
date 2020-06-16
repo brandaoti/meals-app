@@ -4,11 +4,11 @@ import '../model/category.dart';
 
 import '../routes/app_routes.dart';
 
-class CategoryItem extends StatelessWidget {
+class CategoryItens extends StatelessWidget {
   // Instancia da classe Category, pegando os atributos passado no construtor
   final Category category;
   // Construtor
-  const CategoryItem(this.category);
+  const CategoryItens(this.category);
 
   void _selectCategory(BuildContext context) {
     Navigator.of(context).pushNamed(
