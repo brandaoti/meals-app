@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import '../model/meal.dart';
 
-class MealItens extends StatelessWidget {
+class CategoryMealItem extends StatelessWidget {
   //Instancia da classe
   final Meal meal;
 
   //Construtor
-  const MealItens(this.meal);
+  const CategoryMealItem(this.meal);
 
   // TODO: Criar método pra navegar para tela com os detalhes da Meal
 

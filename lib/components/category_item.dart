@@ -4,15 +4,15 @@ import '../model/category.dart';
 
 import '../routes/app_routes.dart';
 
-class CategoryItens extends StatelessWidget {
+class CategoryItem extends StatelessWidget {
   // Instancia da classe Category, pegando os atributos passado no construtor
   final Category category;
   // Construtor
-  const CategoryItens(this.category);
+  const CategoryItem(this.category);
 
   void _selectCategory(BuildContext context) {
     Navigator.of(context).pushNamed(
-      AppRouter.CATEGORIES_MEAL_SCREEN,
+      AppRouter.MEAL_SCREEN,
       arguments: category,
     );
   }
@@ -35,7 +35,7 @@ class CategoryItens extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           // Passando titulo das refeições
-          child: Text(category.title),
+          child: Text(category.id),
         ),
       ),
     );

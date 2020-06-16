@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class CategoryMealDetailScreen extends StatelessWidget {
+class MealDetailScreen extends StatelessWidget {
   //
   @override
   Widget build(BuildContext context) {
-    //
+    // TODO : Criar tela com detalhes da refeição
     return Container(
       child: Center(
         child: Text('Tela de Detalhes da refeição'),
