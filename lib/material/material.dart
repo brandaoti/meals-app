@@ -4,6 +4,7 @@ import '../routes/app_routes.dart';
 
 import '../screens/home_screen.dart';
 import '../screens/meals_screen.dart';
+import '../screens/meal_detail_screen.dart';
 
 class MyMaterialApp extends StatelessWidget {
   @override
@@ -17,6 +18,7 @@ class MyMaterialApp extends StatelessWidget {
       routes: {
         AppRouter.HOME: (ctx) => HomeScreen(),
         AppRouter.MEAL_SCREEN: (ctx) => MealScreen(),
+        AppRouter.MEAL_DETAIL_SCREEN: (ctx) => MealDetailScreen(),
       },
     );
   }
