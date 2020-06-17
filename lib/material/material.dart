@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import '../routes/app_routes.dart';
 
 import '../screens/home_screen.dart';
-import '../screens/category_meals_screen.dart';
+import '../screens/meals_screen.dart';
+import '../screens/meal_detail_screen.dart';
 
 class MyMaterialApp extends StatelessWidget {
   @override
@@ -16,7 +17,8 @@ class MyMaterialApp extends StatelessWidget {
       // Passando rotas nomeadas
       routes: {
         AppRouter.HOME: (ctx) => HomeScreen(),
-        AppRouter.CATEGORIES_MEAL_SCREEN: (ctx) => CategoryMealsScreen(),
+        AppRouter.MEAL_SCREEN: (ctx) => MealScreen(),
+        AppRouter.MEAL_DETAIL_SCREEN: (ctx) => MealDetailScreen(),
       },
     );
   }

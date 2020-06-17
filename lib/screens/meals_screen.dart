@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../components/meal_items.dart';
+import '../components/category_meal_item.dart';
 
 import '../data/dummy_category.dart';
 
 import '../model/category.dart';
 import '../model/meal.dart';
 
-class CategoryMealsScreen extends StatelessWidget {
+class MealScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Implements ModalRoute
@@ -26,7 +26,7 @@ class CategoryMealsScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: categoryMeals.length, // Precisa passar as refeições aqui
         itemBuilder: (context, index) {
-          return MealItems(categoryMeals[index]);
+          return CategoryMealItem(categoryMeals[index]);
         },
       ),
     );
