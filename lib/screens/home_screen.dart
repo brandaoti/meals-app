@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
-import '../data/dummy_category.dart';
 import '../components/category_item.dart';
+
+import '../data/dummy_category.dart';
+
+import '../routes/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -32,12 +35,16 @@ class HomeScreen extends StatelessWidget {
             ListTile(
               leading: Icon(Icons.restaurant_menu),
               title: Text('Refeições'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushReplacementNamed(
+                AppRouter.HOME,
+              ),
             ),
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Configurações'),
-              onTap: () {},
+              onTap: () => Navigator.of(context).pushReplacementNamed(
+                'AppRouter.SETTINGS',
+              ),
             ),
           ],
         ),
