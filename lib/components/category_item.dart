@@ -35,7 +35,7 @@ class CategoryItem extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           // Passando titulo das refeições
-          child: Text(category.id),
+          child: Text(category.title),
         ),
       ),
     );
