@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
               leading: Icon(Icons.settings),
               title: Text('Configurações'),
               onTap: () => Navigator.of(context).pushReplacementNamed(
-                'AppRouter.SETTINGS',
+                AppRouter.SETTINGS,
               ),
             ),
           ],
