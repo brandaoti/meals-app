@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../components/category_item.dart';
+import '../components/main_drawer.dart';
 
 import '../data/dummy_category.dart';
-
-import '../routes/app_routes.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -15,6 +14,10 @@ class HomeScreen extends StatelessWidget {
         title: Text('Refeições'),
         centerTitle: true,
       ),
+
+      //Instanciando da classe main drawer
+      drawer: MainDrawer(),
+
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         // Layout for gridView
