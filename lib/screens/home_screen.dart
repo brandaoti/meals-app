@@ -15,40 +15,6 @@ class HomeScreen extends StatelessWidget {
         title: Text('Refeições'),
         centerTitle: true,
       ),
-      // Drawer para settings e meals navigation
-      drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 150,
-              width: double.infinity,
-              color: Colors.greenAccent,
-              alignment: Alignment.bottomCenter,
-              padding: EdgeInsets.all(10),
-              child: Text(
-                'Vamos Cozinhar?',
-                style: TextStyle(fontFamily: 'Kreon', fontSize: 20),
-              ),
-            ),
-            //
-            SizedBox(height: 20),
-            ListTile(
-              leading: Icon(Icons.restaurant_menu),
-              title: Text('Refeições'),
-              onTap: () => Navigator.of(context).pushReplacementNamed(
-                AppRouter.HOME,
-              ),
-            ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text('Configurações'),
-              onTap: () => Navigator.of(context).pushReplacementNamed(
-                AppRouter.SETTINGS,
-              ),
-            ),
-          ],
-        ),
-      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         // Layout for gridView
