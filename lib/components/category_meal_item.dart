@@ -11,7 +11,7 @@ class CategoryMealItem extends StatelessWidget {
   //Construtor
   const CategoryMealItem(this.meal);
 
-  // TODO: Criar método pra navegar para tela com os detalhes da Meal
+  // navegar para tela com os detalhes da Meal
   void _selectMealDetail(BuildContext context) {
     Navigator.of(context).pushNamed(
       AppRouter.MEAL_DETAIL_SCREEN,
@@ -21,7 +21,7 @@ class CategoryMealItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //TODO: add um InkWell e ativar onTap, chamando a função
+    //InkWell pra detectar e ativar a função do click
     return InkWell(
       // função pra chamar a tela de detalhes da refeição
       onTap: () => _selectMealDetail(context),
@@ -49,7 +49,7 @@ class CategoryMealItem extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                //TODO: Add o Positioned, pra exibir uma msg
+                //Positioned, pra alinhar o local do titulo
                 Positioned(
                   //
                   left: 10,
