@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../routes/app_routes.dart';
 
 import '../screens/home_screen.dart';
+import '../screens/tabs_screen.dart';
 import '../screens/meals_screen.dart';
 import '../screens/meal_detail_screen.dart';
 import '../screens/settings_screen.dart';
@@ -14,10 +15,10 @@ class MyMaterialApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Lista de Refeições',
-      home: HomeScreen(),
+      //home: HomeScreen(),
       // Passando rotas nomeadas
       routes: {
-        AppRouter.HOME: (ctx) => HomeScreen(),
+        AppRouter.HOME: (ctx) => TabsScreen(),
         AppRouter.MEAL_SCREEN: (ctx) => MealScreen(),
         AppRouter.MEAL_DETAIL_SCREEN: (ctx) => MealDetailScreen(),
         AppRouter.SETTINGS: (ctx) => SettingsScreen(),
