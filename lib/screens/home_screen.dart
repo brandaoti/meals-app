@@ -33,6 +33,31 @@ class HomeScreen extends StatelessWidget {
           }).toList(),
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Theme.of(context).primaryColor,
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.category,
+              color: Colors.white,
+            ),
+            title: Text(
+              'Categorias',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.favorite,
+              color: Colors.white,
+            ),
+            title: Text(
+              'Favoritos',
+              style: TextStyle(color: Colors.white),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
