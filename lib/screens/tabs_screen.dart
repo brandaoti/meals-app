@@ -12,7 +12,7 @@ class TabsScreen extends StatefulWidget {
 
 class _TabsScreenState extends State<TabsScreen> {
   // Responsavel por passar o index pelo array
-  final _selectScreenIndex = 0;
+  int _selectScreenIndex = 0;
 
   //Lista de map, pra buscar as telas definidas
   final List<Map<String, Object>> _screens = [
@@ -26,19 +26,28 @@ class _TabsScreenState extends State<TabsScreen> {
     },
   ];
 
+  // Método de navegação
+  void _selectBottomBar(int index) {
+    setState(() {
+      _selectScreenIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Lista de Categorias'),
+        title: Text(
+          _screens[_selectScreenIndex]['title'],
+        ),
       ),
 
-      // TODO: Chamar por um array com as tela
       body: _screens[_selectScreenIndex]['screen'],
 
       //Instanciando da classe main drawer
       drawer: MainDrawer(),
       bottomNavigationBar: BottomNavigationBar(
+        onTap: _selectBottomBar,
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.category),
