@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../components/category_item.dart';
-import '../components/main_drawer.dart';
 
 import '../data/dummy_category.dart';
 
@@ -10,14 +9,6 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     // Implements build Scaffold
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Refeições'),
-        centerTitle: true,
-      ),
-
-      //Instanciando da classe main drawer
-      drawer: MainDrawer(),
-
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         // Layout for gridView
@@ -32,31 +23,6 @@ class HomeScreen extends StatelessWidget {
             return CategoryItem(item);
           }).toList(),
         ),
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Theme.of(context).primaryColor,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.category,
-              color: Colors.white,
-            ),
-            title: Text(
-              'Categorias',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite,
-              color: Colors.white,
-            ),
-            title: Text(
-              'Favoritos',
-              style: TextStyle(color: Colors.white),
-            ),
-          ),
-        ],
       ),
     );
   }
