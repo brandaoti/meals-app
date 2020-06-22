@@ -5,7 +5,12 @@ import '../components/main_drawer.dart';
 import '../screens/home_screen.dart';
 import '../screens/favorite_screen.dart';
 
-class TabsScreen extends StatelessWidget {
+class TabsScreen extends StatefulWidget {
+  @override
+  _TabsScreenState createState() => _TabsScreenState();
+}
+
+class _TabsScreenState extends State<TabsScreen> {
   // Responsavel por passar o index pelo array
   final _selectScreenIndex = 0;
 
