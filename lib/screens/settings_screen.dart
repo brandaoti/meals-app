@@ -5,6 +5,7 @@ import '../components/main_drawer.dart';
 import '../model/settings.dart';
 
 class SettingsScreen extends StatefulWidget {
+  // Responsavel por salvar o estado das configurações
   final Settings settings;
 
   // Função pra ativar as configurações
@@ -17,8 +18,14 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  // Responsavel por pegar os atributos de settings
-  final settings = Settings();
+  // Responsavel por pegar os atributos de settings()
+  var settings = Settings();
+
+  // Método pra sobreescrever os dados e salvar as configurações.
+  void initState() {
+    super.initState();
+    settings = widget.settings;
+  }
 
   // Switch das configurações
   Widget _createSwitch(

@@ -21,10 +21,15 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
   // Filtrar as refeições disponiveis
   List<Meal> _availableMeal = DUMMY_MEALS;
 
-  final settings = Settings();
+  // Instancia responsavel por armazenar o estado
+  Settings settings = Settings();
 
   void _filterMeal(Settings settings) {
     setState(() {
+      //recebendo estado atual
+      this.settings = settings;
+
+      // Recebe os dados atualizados da lista
       _availableMeal = DUMMY_MEALS.where((meal) {
         final filterGluten = settings.isGluttenFree && !meal.isGlutenFree;
         final filterLactose = settings.isLactoseFree && !meal.isLactoseFree;
