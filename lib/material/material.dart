@@ -71,7 +71,9 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
       //home: HomeScreen(),
       // Passando rotas nomeadas
       routes: {
-        AppRouter.HOME: (ctx) => TabsScreen(),
+        AppRouter.HOME: (ctx) => TabsScreen(
+              _favoriteMeals,
+            ),
         AppRouter.MEAL_SCREEN: (ctx) => MealScreen(_availableMeal),
         AppRouter.MEAL_DETAIL_SCREEN: (ctx) => MealDetailScreen(
               _addFavoriteMeals,

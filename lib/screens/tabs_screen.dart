@@ -2,10 +2,17 @@ import 'package:flutter/material.dart';
 
 import '../components/main_drawer.dart';
 
+import '../model/meal.dart';
+
 import '../screens/home_screen.dart';
 import '../screens/favorite_screen.dart';
 
 class TabsScreen extends StatefulWidget {
+  //
+  final List<Meal> favoriteMeals;
+
+  const TabsScreen(this.favoriteMeals);
+
   @override
   _TabsScreenState createState() => _TabsScreenState();
 }
@@ -15,16 +22,22 @@ class _TabsScreenState extends State<TabsScreen> {
   int _selectScreenIndex = 0;
 
   //Lista de map, pra buscar as telas definidas
-  final List<Map<String, Object>> _screens = [
-    {
-      'title': 'Lista de Categorias',
-      'screen': HomeScreen(),
-    },
-    {
-      'title': 'Lista de Favoritos',
-      'screen': FavoriteScreen(),
-    },
-  ];
+  List<Map<String, Object>> _screens = [];
+
+  // Sobreescrever função da tela de favoritos
+  void initState() {
+    super.initState();
+    _screens = [
+      {
+        'title': 'Lista de Categorias',
+        'screen': HomeScreen(),
+      },
+      {
+        'title': 'Lista de Favoritos',
+        'screen': FavoriteScreen(widget.favoriteMeals),
+      },
+    ];
+  }
 
   // Método de navegação
   void _selectBottomBar(int index) {
