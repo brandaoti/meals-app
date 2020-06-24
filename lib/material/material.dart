@@ -21,9 +21,13 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
   // Filtrar as refeições disponiveis
   List<Meal> _availableMeal = DUMMY_MEALS;
 
+  // Favoritando refeições
+  List<Meal> _favoriteMeals;
+
   // Instancia responsavel por armazenar o estado
   Settings settings = Settings();
 
+  // Função responsavel pela filtragem
   void _filterMeal(Settings settings) {
     setState(() {
       //recebendo estado atual
@@ -41,6 +45,15 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
             !filterVegan &&
             !filterVegetarian;
       }).toList();
+    });
+  }
+
+  // Método pra add refeições
+  void _addFavoriteMeals(Meal meal) {
+    setState(() {
+      _favoriteMeals.contains(meal)
+          ? _favoriteMeals.remove(meal)
+          : _favoriteMeals.add(meal);
     });
   }
 

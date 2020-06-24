@@ -120,7 +120,12 @@ class MealDetailScreen extends StatelessWidget {
           ],
         ),
       ),
-      // TODO: add um FloatButton, responsavel pela por marcar como favorito
+      // Add favoritos
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.star),
+        //backgroundColor: Color.fromRGBO(51, 204, 255, 0.5),
+        onPressed: () {},
+      ),
     );
   }
 }
