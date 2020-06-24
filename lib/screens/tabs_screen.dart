@@ -25,6 +25,7 @@ class _TabsScreenState extends State<TabsScreen> {
   List<Map<String, Object>> _screens = [];
 
   // Sobreescrever função da tela de favoritos
+  @override
   void initState() {
     super.initState();
     _screens = [

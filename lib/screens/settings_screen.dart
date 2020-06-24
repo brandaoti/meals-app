@@ -22,6 +22,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   var settings = Settings();
 
   // Método pra sobreescrever os dados e salvar as configurações.
+  @override
   void initState() {
     super.initState();
     settings = widget.settings;
