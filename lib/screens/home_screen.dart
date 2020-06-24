@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 
-import '../data/dummy_category.dart';
 import '../components/category_item.dart';
+
+import '../data/dummy_category.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Implements build Scaffold
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Refeições'),
-        centerTitle: true,
-      ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         // Layout for gridView
