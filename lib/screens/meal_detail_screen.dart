@@ -4,8 +4,10 @@ import '../model/meal.dart';
 
 class MealDetailScreen extends StatelessWidget {
   //
+  final Function onFavoriteMeals; // add
+  final bool Function(Meal) isFavoriteMeals; // testa
 
-  //final sizeBox = SizedBox(height: 20);
+  const MealDetailScreen(this.onFavoriteMeals, this.isFavoriteMeals);
 
   // Widget create section title
   Widget _createSectionTitle(BuildContext ctx, String title) {
@@ -73,7 +75,6 @@ class MealDetailScreen extends StatelessWidget {
             ),
 
             // Instanciando Container patronizado "Ingredients"
-            //sizeBox,
             _createSectionTitle(context, 'Ingredientes'),
             _createSectionContainer(
               ListView.builder(
@@ -124,7 +125,9 @@ class MealDetailScreen extends StatelessWidget {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.star),
         //backgroundColor: Color.fromRGBO(51, 204, 255, 0.5),
-        onPressed: () {},
+        onPressed: () {
+          onFavoriteMeals(meal);
+        },
       ),
     );
   }

@@ -21,8 +21,8 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
   // Filtrar as refeições disponiveis
   List<Meal> _availableMeal = DUMMY_MEALS;
 
-  // Favoritando refeições
-  List<Meal> _favoriteMeals;
+  // Filtragem de refeições favorita
+  List<Meal> _favoriteMeals = [];
 
   // Instancia responsavel por armazenar o estado
   Settings settings = Settings();
@@ -57,6 +57,11 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
     });
   }
 
+  // Função pra retornar as refeições favoritada
+  bool _isFavorite(Meal meal) {
+    return _favoriteMeals.contains(meal);
+  }
+
   @override
   Widget build(BuildContext context) {
     // Implements build Material App
@@ -68,7 +73,10 @@ class _MyMaterialAppState extends State<MyMaterialApp> {
       routes: {
         AppRouter.HOME: (ctx) => TabsScreen(),
         AppRouter.MEAL_SCREEN: (ctx) => MealScreen(_availableMeal),
-        AppRouter.MEAL_DETAIL_SCREEN: (ctx) => MealDetailScreen(),
+        AppRouter.MEAL_DETAIL_SCREEN: (ctx) => MealDetailScreen(
+              _addFavoriteMeals,
+              _isFavorite,
+            ),
         AppRouter.SETTINGS: (ctx) => SettingsScreen(_filterMeal, settings),
       },
     );
